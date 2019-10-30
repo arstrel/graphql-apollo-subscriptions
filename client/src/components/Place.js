@@ -13,12 +13,15 @@ const Place = ({ name, votes, subscribeToFreshVotes }) => {
   
   const [voteUp, { data }] = useMutation(VOTE_UP);
   const [voteDown, { data: fresh }] = useMutation(VOTE_DOWN);
-
+  const style = {
+    display: "flex",
+    "justify-content": "space-around"
+  }
 
 
   return (
     <div>
-      <div style={{display: "flex"}}>
+      <div style={style}>
         <Button
           onClick={() => voteUp({ variables: { name } })}
           variant="outlined"

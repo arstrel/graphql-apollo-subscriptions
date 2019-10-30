@@ -28,8 +28,10 @@ const AddPlace = () => {
         onChange={handleChange}
         value={value}
         autoFocus
+        style={{"width":"100%"}}
       />
-      <Button variant="contained" color="secondary" type="submit">
+      <br/><br/>
+      <Button variant="contained" color="primary" type="submit">
         Add this place
       </Button>
     </form>
