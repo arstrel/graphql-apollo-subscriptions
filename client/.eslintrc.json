@@ -1,0 +1,138 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "airbnb",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "trailingComma": "es5",
+            "singleQuote": true,
+            "useTabs": true,
+            "tabWidth": 2,
+            "bracketSpacing": true,
+            "printWidth": 80,
+            "jsxBracketSameLine": false
+          }
+        ],
+        "max-len": [
+          "error",
+          {
+            "code": 500,
+            "comments": 120,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true
+          }
+        ],
+        "max-params": ["error", 3],
+        "no-console": [
+          "error",
+          {
+            "allow": ["warn", "error"]
+          }
+        ],
+        "arrow-body-style": "off",
+        "indent": "off",
+        "no-use-before-define": "off",
+        "curly": ["error", "all"],
+        "no-unused-vars": [
+          "error",
+          {
+            "ignoreRestSiblings": true
+          }
+        ],
+        "no-return-assign": ["error", "except-parens"],
+        "no-param-reassign": [
+          "error",
+          {
+            "props": true,
+            "ignorePropertyModificationsFor": ["acc", "accumulator", "result"]
+          }
+        ],
+        "consistent-return": [
+          "error",
+          {
+            "treatUndefinedAsUnspecified": false
+          }
+        ],
+        "no-else-return": [
+          "error",
+          {
+            "allowElseIf": true
+          }
+        ],
+        "linebreak-style": ["error", "unix"],
+        "quotes": [
+          "error",
+          "single",
+          {
+            "allowTemplateLiterals": true,
+            "avoidEscape": true
+          }
+        ],
+        "semi": "off",
+        "dot-notation": 0,
+        "comma-dangle": [
+          "error",
+          {
+            "arrays": "ignore",
+            "objects": "ignore",
+            "imports": "ignore",
+            "exports": "ignore"
+          }
+        ],
+        "no-shadow": "off",
+        "no-lonely-if": "off",
+        "import/no-named-default": "off",
+        "import/prefer-default-export": "off",
+        "no-plusplus": [
+          "error",
+          {
+            "allowForLoopAfterthoughts": true
+          }
+        ],
+        "guard-for-in": 0,
+        "no-prototype-builtins": 0,
+        "react/jsx-filename-extension": [
+          "error",
+          {
+            "extensions": [".js", ".jsx"]
+          }
+        ],
+        "react/require-default-props": "off",
+        "react/sort-comp": "off",
+        "react/no-access-state-in-setstate": "off",
+        "react/no-did-update-set-state": "off",
+        "react/no-unused-state": "off",
+        "react/forbid-prop-types": 0,
+        "react/no-array-index-key": 1,
+        "react/destructuring-assignment": [
+          1,
+          "always",
+          {
+            "ignoreClassFields": true
+          }
+        ],
+        "jsx-a11y/label-has-for": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/tabindex-no-positive": "off"
+      }
+}
