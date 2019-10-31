@@ -21,6 +21,12 @@ const server = new ApolloServer({
 });
 app.use(cors());
 
+
+server.applyMiddleware({ app, path: '/graphql' });
+
+const httpServer = http.createServer(app);
+server.installSubscriptionHandlers(httpServer);
+
 if(process.env.NODE_ENV === "production") {
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
@@ -28,11 +34,8 @@ if(process.env.NODE_ENV === "production") {
   })
 }
 
-server.applyMiddleware({ app, path: '/graphql' });
-
-const httpServer = http.createServer(app);
-server.installSubscriptionHandlers(httpServer);
 const PORT = process.env.PORT || 8001;
+
 httpServer.listen({port: PORT}, () => {
   console.log(`Apollo Server on http://localhost:${PORT}/graphql`);
 });
