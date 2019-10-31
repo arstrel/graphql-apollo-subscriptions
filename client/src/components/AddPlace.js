@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import { useMutation } from '@apollo/react-hooks';
-import { ADD_VENUE } from '../queries/queries';
+import { ADD_VENUE, VOTE_UP } from '../queries/queries';
 
 const AddPlace = () => {
+  
   const [add, { data }] = useMutation(ADD_VENUE);
+  //vote up because it makes logical sence 
+  // but also to trigger the subscription
+  const [ voteUp, response ] = useMutation(VOTE_UP);
   const [value, setValue] = useState('');
 
   const handleSubmit = e => {
@@ -14,6 +18,11 @@ const AddPlace = () => {
       variables: { name: value },
     });
     setValue('');
+    voteUp({
+      variables: {
+        name: value
+      }
+    })
   };
 
   const handleChange = e => {
@@ -28,7 +37,7 @@ const AddPlace = () => {
         onChange={handleChange}
         value={value}
         autoFocus
-        style={{"width":"100%"}}
+        className="place-input"
       />
       <br/><br/>
       <Button variant="contained" color="primary" type="submit">

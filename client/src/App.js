@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css'
 import AddPlace from './components/AddPlace';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
@@ -11,10 +12,7 @@ import { VENUES, VOTED_UP_DOWN } from './queries/queries';
 
 function App() {
   const { data, loading, subscribeToMore } = useQuery(VENUES);
-
-  const style = {
-    padding: '15px',
-  };
+  
 
   return (
     <div className="App">
@@ -22,13 +20,13 @@ function App() {
       <Container maxWidth="sm">
         <Grid container spacing={2}>
           <Grid item>
-            <Paper style={style}>
+            <Paper className="padding-15">
               <Typography variant="h2">Lunch Voter!</Typography>
             </Paper>
           </Grid>
           <Grid item xs={8}>
-            <Paper style={style}>
-              <AddPlace />
+            <Paper className="padding-15">
+              <AddPlace/>
             </Paper>
           </Grid>
         </Grid>
@@ -36,10 +34,10 @@ function App() {
           {!loading && (
             <LunchOptions
               options={data.venues}
-              subscribeToFreshVotes={name =>
+              subscribeToFreshVotes={() =>
                 subscribeToMore({
                   document: VOTED_UP_DOWN,
-                  variables: { name: name },
+                  variables: {},
                   updateQuery: (prev, { subscriptionData }) => {
                     if (!subscriptionData.data) return prev;
                     const updatedVenueInfo = subscriptionData.data.votedUpDown;

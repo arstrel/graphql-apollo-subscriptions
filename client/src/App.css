@@ -2,21 +2,17 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.venue-item {
+  text-align: center;
+  padding: 15px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.place-input {
+  width: 100%;
 }
-
-.App-link {
-  color: #09d3ac;
+.place-button-title-group {
+    display: flex;
+    justify-content: space-around;
+}
+.padding-15 {
+    padding: 15px;
 }
