@@ -33,6 +33,6 @@ server.applyMiddleware({ app, path: '/graphql' });
 const httpServer = http.createServer(app);
 server.installSubscriptionHandlers(httpServer);
 const PORT = process.env.PORT || 8001;
-httpServer.listen({ port: PORT }, () => {
+httpServer.listen(PORT, () => {
   console.log(`Apollo Server on http://localhost:${PORT}/graphql`);
 });
