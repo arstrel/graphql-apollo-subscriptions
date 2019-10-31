@@ -10,20 +10,20 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "graphql": "^14.5.8",
-    "lodash": "^4.17.15"
-  },
-  "devDependencies": {
+    "lodash": "^4.17.15",
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
-    "@babel/node": "^7.0.0",
+    "@babel/node": "^7.0.0"
+  },
+  "devDependencies": {
     "nodemon": "^1.18.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node app.js",
-    "server": "babel-node app.js",
+    "server": "nodemon --exec babel-node app.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
