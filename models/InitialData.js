@@ -4,11 +4,7 @@ export const VENUES = [
         votes: 0
     },
     {
-        name: 'Korean',
-        votes: 0
-    },
-    {
-        name: 'Salty doughnut',
+        name: 'Market',
         votes: 0
     },
     {
@@ -16,7 +12,11 @@ export const VENUES = [
         votes: 0
     },
     {
-        name: 'Market',
+        name: 'Korean',
+        votes: 0
+    },
+    {
+        name: 'Salty doughnut',
         votes: 0
     },
 ];

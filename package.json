@@ -2,10 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "apollo-server": "^2.9.7",
     "apollo-server-express": "^2.9.7",
+    "concurrently": "^5.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "graphql": "^14.5.8",
@@ -21,7 +22,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node app.js"
+    "start": "nodemon --exec babel-node app.js",
+    "server": "nodemon --exec babel-node app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",

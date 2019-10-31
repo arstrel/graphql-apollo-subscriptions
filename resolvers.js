@@ -46,6 +46,7 @@ export const resolvers = {
         }
 
     },
+    // Subscriptions have the same signature of (parent, args, context, info)
     Subscription: {
         venueAdded: {
             subscribe: () => pubsub.asyncIterator([VENUE_ADDED])
