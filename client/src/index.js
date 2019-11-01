@@ -14,11 +14,11 @@ import { getMainDefinition } from 'apollo-utilities';
 const PORT = process.env.PORT || 8001;
 // Create an http link:
 const httpLink = new HttpLink({
-  uri: `http://localhost:${PORT}/graphql`
+  uri: process.env.REACT_APP_GRAPHQL_URL_HTTP
 });
 // Create a WebSocket link:
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:${PORT}/graphql`,
+  uri: process.env.REACT_APP_GRAPHQL_URL_WS,
   options: {
     reconnect: true
   }
