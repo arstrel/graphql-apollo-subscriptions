@@ -4,6 +4,7 @@ import { typeDefs } from './types';
 import { resolvers } from './resolvers';
 import http from 'http';
 import cors from 'cors';
+import path from 'path';
 import { VENUES } from './models/InitialData';
 
 const app = express();
@@ -27,15 +28,15 @@ server.applyMiddleware({ app, path: '/graphql' });
 const httpServer = http.createServer(app);
 server.installSubscriptionHandlers(httpServer);
 
-if(process.env.NODE_ENV === "production") {
-  app.use(express.static('client/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-  })
-}
 app.get('/test', (req, res) => {
   res.send('Connected')
 })
+// if(process.env.NODE_ENV === "production") {
+//   app.use(express.static('client/build'));
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+//   })
+// }
 const PORT = process.env.PORT || 8001;
 
 httpServer.listen({port: PORT}, () => {
