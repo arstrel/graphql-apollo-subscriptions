@@ -14,7 +14,7 @@ import { getMainDefinition } from 'apollo-utilities';
 const PORT = process.env.PORT || 8001;
 // Create an http link:
 const httpLink = new HttpLink({
-  uri: `:${PORT}/graphql`
+  uri: `http://localhost:${PORT}/graphql`
 });
 // Create a WebSocket link:
 const wsLink = new WebSocketLink({
