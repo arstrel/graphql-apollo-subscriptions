@@ -33,7 +33,9 @@ if(process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   })
 }
-
+app.get('/test', (req, res) => {
+  res.send('Connected')
+})
 const PORT = process.env.PORT || 8001;
 
 httpServer.listen({port: PORT}, () => {
